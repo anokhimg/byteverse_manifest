@@ -2,15 +2,24 @@ version: 0.1.0
 jobId: "1"
 jobName: PMS Test V6
 jobType: Source Aligned Data Product
-alias: Load_final_PMS_State_final_v6
+alias: Trial_End_To_End_3
 discoveryPort:
-  name: PMS Test V6
+  name: Aneree Chained Product
   description: ""
   category: ""
   image: https://google.com
   autofillUserinfo: ""
   tags: []
   extra: {}
+  shortDescription: This is an ultra short description
+  industryDomain: ['PMS']
+  function: ''industryDomain: "PMS"
+  function: "PMS"
+  regulatoryFields:
+    dataPrivacy: public
+    customerInfo: nonPII
+    dataOrigin: machineGenerated
+    monetaryInfo: nonFinancialData  
 inputPorts:
   - alias: PMS_Transactions_1
     description: PMS Transactions
