@@ -12,8 +12,7 @@ discoveryPort:
   tags: []
   extra: {}
   shortDescription: This is an ultra short description
-  industryDomain: ['PMS']
-  function: ''industryDomain: "PMS"
+  industryDomain: "PMS"
   function: "PMS"
   regulatoryFields:
     dataPrivacy: public
