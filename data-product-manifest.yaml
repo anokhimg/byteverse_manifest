@@ -5,12 +5,20 @@ jobType: Source Aligned Data Product
 alias: Load_final_state
 discoveryPort:
   name: Weather API Test Manifest creation
-  description: ""
   category: ""
   image: https://google.com
   autofillUserinfo: ""
   tags: []
   extra: {}
+  shortDescription: ShortDescription
+  longDescription: LongLongLongDescriptionDescription
+  industryDomain: "PMS"
+  function: "PMS"
+  regulatoryFields:
+    dataPrivacy: public
+    customerInfo: nonPII
+    dataOrigin: machineGenerated
+    monetaryInfo: nonFinancialData
 inputPorts:
   - alias: Weather_Full_Data_1
     description: Weather Full Data
