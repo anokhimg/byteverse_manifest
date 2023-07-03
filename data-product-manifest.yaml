@@ -33,7 +33,7 @@ inputPorts:
     persistDataFrame: false
 productState:
   alias: Load_final_state
-  refreshInterval: ""
+  refreshInterval: "0 0 * 9 1"
   retentionVersions: ""
   updateStrategy: append
   logicalSchema:
