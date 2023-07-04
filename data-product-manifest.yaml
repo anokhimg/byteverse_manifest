@@ -13,6 +13,7 @@ discoveryPort:
   extra: {}
 inputPorts:
   - alias: Load_final_state_1
+    type: dataproduct
     description: ""
     tags: []
     extra: {}
