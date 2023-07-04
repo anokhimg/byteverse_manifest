@@ -20,8 +20,7 @@ inputPorts:
     type: dataproduct
     dataSetUrn: ""
     filter: ""
-    projection:
-      - ""
+    projection:[]
     dataProductUrn: urn:dv:dataproduct:be336045-193e-457b-aca8-3733d3560404
     persistDataFrame: false
 productState:
