@@ -2,9 +2,9 @@ version: 0.1.0
 jobId: "1"
 jobName: PMS
 jobType: Source Aligned Data Product
-alias: Trial_End_to_End_2
+alias: Trial_End_to_End_3
 discoveryPort:
-  name: Aneree Job 1
+  name: Aneree Job 2
   category: ""
   image: https://google.com
   autofillUserinfo: ""
