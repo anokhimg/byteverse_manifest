@@ -1,44 +1,101 @@
 version: 0.1.0
-jobId: "9"
-jobName: Weather API Curated Test
-jobType: Curated Data Product
-alias: Store_final_state_test
+jobId: "7"
+jobName: Weather API Test Manifest creation
+jobType: Source Aligned Data Product
+alias: Load_final_state
 discoveryPort:
-  name: Weather API Curated Test 1
-  description: ""
+  name: Weather API Test Manifest creation
   category: ""
   image: https://google.com
   autofillUserinfo: ""
   tags: []
   extra: {}
+  shortDescription: ShortDescription
+  longDescription: LongLongLongDescriptionDescription
+  industryDomain: "PMS"
+  function: "PMS"
 inputPorts:
-  - alias: Load_final_state_1
-    description: ""
+  - alias: Weather_Full_Data_1
+    description: Weather Full Data
     tags: []
     extra: {}
     syncType: pull
-    type: dataproduct
-    dataSetUrn: ""
+    type: s3-csv
+    dataSetUrn: urn:dv:dataset:8df27fe0-a881-443e-ae1b-9168fd38621a
     filter: ""
     projection: []
-    dataProductUrn: urn:dv:dataproduct:be336045-193e-457b-aca8-3733d3560404
+    dataProductUrn: ""
     persistDataFrame: false
 productState:
-  alias: Store_final_state_test
-  refreshInterval: ""
+  alias: Load_final_state
+  refreshInterval: "0 0 * 9 1"
   retentionVersions: ""
-  updateStrategy: overwrite
+  updateStrategy: append
   logicalSchema:
     properties:
-      a:
+      City:
         type: STRING
-      b:
+      Region:
+        type: STRING
+      Country:
+        type: STRING
+      Latitude:
+        type: STRING
+      Longitude:
+        type: STRING
+      Timezone:
+        type: STRING
+      Local Time:
+        type: STRING
+      Cloud ID:
+        type: STRING
+      Feels like Celcius:
+        type: STRING
+      Feels like fahrenheit:
+        type: STRING
+      Gust speed in kph:
+        type: STRING
+      Gust speed in mph:
+        type: STRING
+      Humidity:
+        type: STRING
+      Is day time?:
+        type: STRING
+      Last update:
+        type: STRING
+      Last updated time in epoch:
+        type: STRING
+      Precipitation in inch:
+        type: STRING
+      Precipitation in mm:
+        type: STRING
+      Pressure:
+        type: STRING
+      Precipitation in mb:
+        type: STRING
+      Temperature in celcius:
+        type: STRING
+      Temperature in fahrenheit:
+        type: STRING
+      UV:
+        type: STRING
+      Visibility in km:
+        type: STRING
+      Visibility in miles:
+        type: STRING
+      Wind Degree:
+        type: STRING
+      Wind Direction:
+        type: STRING
+      Wind in kph:
+        type: STRING
+      Wind in mph:
         type: STRING
   enforceSchemaMethod: ""
   enforceSchema: true
   updateStrategyOptions: {}
   isProfilingEnabled: false
-  tableName: weather_curated_dataproduct
+  tableName: Weather
   stateStoreType: iceberg
 transformation:
   - alias: Spark_SQL_1
@@ -46,7 +103,7 @@ transformation:
     description: Select all data
     query: select * from weather
     references:
-      - alias: Load_final_state_1
+      - alias: Weather_Full_Data_1
         sqlReference: weather
 controlPort:
   dataQualityRules: {}
