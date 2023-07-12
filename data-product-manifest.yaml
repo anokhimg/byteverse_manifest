@@ -2,9 +2,9 @@ version: 0.1.0
 jobId: "7"
 jobName: Weather API Test Manifest creation
 jobType: Source Aligned Data Product
-alias: Load_final_state
+alias: Load_final_state_1
 discoveryPort:
-  name: Weather API Test Manifest creation
+  name: Weather API Test Manifest creation 1
   category: ""
   image: https://google.com
   autofillUserinfo: ""
@@ -27,7 +27,7 @@ inputPorts:
     dataProductUrn: ""
     persistDataFrame: false
 productState:
-  alias: Load_final_state
+  alias: Load_final_state_1
   refreshInterval: "0 0 * 9 1"
   retentionVersions: ""
   updateStrategy: append
