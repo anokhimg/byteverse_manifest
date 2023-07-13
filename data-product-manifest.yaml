@@ -2,7 +2,7 @@ version: 0.1.0
 jobId: "14"
 jobName: Weather API Aneree Test
 jobType: Source Aligned Data Product
-alias: Load_final_state
+alias: Load_final_state_Trial
 discoveryPort:
   name: Weather API Aneree Test
   description: ""
@@ -16,10 +16,10 @@ discoveryPort:
   industryDomain: ""
   function: ""
   regulatoryFields:
-    dataPrivacy: ""
-    customerInfo: ""
-    dataOrigin: ""
-    monetaryInfo: ""
+    dataPrivacy: "private"
+    customerInfo: "nonPII"
+    dataOrigin: "machineGenerated"
+    monetaryInfo: "nonFinancialData"
 inputPorts:
   - alias: Weather_1
     description: Weather
