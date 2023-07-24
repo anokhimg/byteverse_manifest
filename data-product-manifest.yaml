@@ -2,9 +2,9 @@ version: 0.1.0
 jobId: "14"
 jobName: Weather API Aneree Test
 jobType: Source Aligned Data Product
-alias: Load_final_state_Trial
+alias: Aneree Domain Test 1
 discoveryPort:
-  name: Weather API Aneree Test
+  name: Aneree Domain Test - 1
   description: ""
   category: ""
   image: https://google.com
