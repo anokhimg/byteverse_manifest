@@ -2,9 +2,9 @@ version: 0.1.0
 jobId: "9"
 jobName: Weather API Curated Test
 jobType: Curated Data Product
-alias: Store_final_state
+alias: Store_final_state_aneree
 discoveryPort:
-  name: Weather API Curated Test
+  name: Weather API Curated Test Aneree
   description: ""
   category: ""
   image: https://google.com
