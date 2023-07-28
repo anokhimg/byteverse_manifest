@@ -35,7 +35,7 @@ productState:
   alias: Load_final_state
   refreshInterval: "0 0 * 9 1"
   retentionVersions: ""
-  updateStrategy: append
+  updateStrategy: Append
   logicalSchema:
     properties:
       City:
