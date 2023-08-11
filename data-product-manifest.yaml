@@ -2,9 +2,9 @@ version: 0.1.0
 jobId: "7"
 jobName: Weather API Test Manifest creation
 jobType: Source Aligned Data Product
-alias: Load_final_state
+alias: Load_final_state_dependency_check
 discoveryPort:
-  name: Weather API Test Manifest creation
+  name: Weather API Test Manifest creation Dependency
   category: ""
   image: https://google.com
   autofillUserinfo: ""
