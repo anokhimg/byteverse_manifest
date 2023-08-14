@@ -1,53 +1,115 @@
 version: 0.1.0
-jobId: "9"
-jobName: Weather API Curated Test
-jobType: Curated Data Product
-alias: Store_final_state_dependency_check
+jobId: "139"
+jobName: Section Department Master
+jobType: Source Aligned Data Product
+alias: Load_final_state_for_EMS_Section_Department_Mapping
 discoveryPort:
-  name: Weather API Curated Test Dependency
+  name: Section Department Master
   description: ""
   category: ""
   image: https://google.com
   autofillUserinfo: ""
   tags: []
   extra: {}
+  shortDescription: Short Description
+  longDescription: Long Long Long Description
+  industryDomain: ""
+  function: ""
+  regulatoryFields:
+    dataPrivacy: ""
+    customerInfo: ""
+    dataOrigin: ""
+    monetaryInfo: ""
 inputPorts:
-  - alias: Load_final_state_1
-    description: ""
+  - alias: EMS_Section_Department_Mapping_1
+    description: EMS Section Department Mapping
     tags: []
     extra: {}
     syncType: pull
-    type: dataproduct
-    dataSetUrn: ""
+    type: s3-csv
+    dataSetUrn: urn:dv:dataset:73080aed-60fb-4b7b-8e54-ba251fd73c7f
     filter: ""
     projection: []
-    dataProductUrn: urn:dv:dataproduct:be336045-193e-457b-aca8-3733d3560404
+    dataProductUrn: ""
     persistDataFrame: false
+    entity:
+      advanceOptions:
+        mergeSchema: false
 productState:
-  alias: Store_final_state
+  alias: Load_final_state_for_EMS_Section_Department_Mapping
   refreshInterval: ""
   retentionVersions: ""
   updateStrategy: Overwrite
   logicalSchema:
     properties:
-      a:
+      etl_inserted_date:
+        type: DATETIME
+        description: ""
+      etl_modified_date:
+        type: DATETIME
+        description: ""
+      etl_created_by:
         type: STRING
-      b:
+        description: ""
+      etl_updated_by:
         type: STRING
+        description: ""
+      Directorate:
+        type: STRING
+        description: ""
+      Division:
+        type: STRING
+        description: ""
+      Department:
+        type: STRING
+        description: ""
+      Section:
+        type: STRING
+        description: ""
+      EMS_Section_Name:
+        type: STRING
+        description: ""
+      Shop:
+        type: STRING
+        description: ""
+      Status:
+        type: STRING
+        description: ""
+      Data_View:
+        type: STRING
+        description: ""
+      Breakdown_View:
+        type: STRING
+        description: ""
+      SUB_Group:
+        type: STRING
+        description: ""
+      BOM_View:
+        type: STRING
+        description: ""
+      Plant_Location:
+        type: STRING
+        description: ""
   enforceSchemaMethod: ""
   enforceSchema: true
-  updateStrategyOptions: {}
+  enableDataReconciliation: false
   isProfilingEnabled: false
-  tableName: weather_curated_dataproduct
+  tableName: Section_Department_Master
   stateStoreType: iceberg
 transformation:
-  - alias: Spark_SQL_1
+  - alias: SelectColumns
     type: SQL
-    description: Select all data
-    query: select * from weather
+    description: Select Columns
+    query: select current_timestamp() as etl_inserted_date,current_timestamp() as
+      etl_modified_date,'platform_admin' as etl_created_by,'platform_admin' as
+      etl_updated_by,Directorate,Division,Department,Section,`EMS Section Name`
+      as EMS_Section_Name,Shop,Status,`Data View` as Data_View,`Breakdown View`
+      as Breakdown_View,`SUB Group` as SUB_Group,`BOM View` as BOM_View,`Plant
+      Location` AS Plant_Location from df_master
+    sequenceNo: 2
     references:
-      - alias: Load_final_state_1
-        sqlReference: weather
+      - alias: EMS_Section_Department_Mapping_1
+        sqlReference: df_master
 controlPort:
   dataQualityRules: {}
 outputPort:
