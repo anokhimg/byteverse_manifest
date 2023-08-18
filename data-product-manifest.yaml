@@ -54,3 +54,5 @@ outputPort:
   subscriptionChannels:
     - channelType: JDBC
       queryType: SQL
+    - channelType: Postgres
+      queryType: SQL
