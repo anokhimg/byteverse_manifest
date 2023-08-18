@@ -2,9 +2,9 @@ version: 0.1.0
 jobId: "9"
 jobName: Weather API Curated Test
 jobType: Curated Data Product
-alias: Store_final_state
+alias: Postgres_check
 discoveryPort:
-  name: Weather API Curated Test
+  name: Postgres Check
   description: ""
   category: ""
   image: https://google.com
