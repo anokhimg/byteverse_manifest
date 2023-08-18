@@ -25,7 +25,7 @@ inputPorts:
     persistDataFrame: false
 productState:
   alias: Store_final_state
-  refreshInterval: ""
+  refreshInterval: "0 13 * * *"
   retentionVersions: ""
   updateStrategy: Overwrite
   logicalSchema:
