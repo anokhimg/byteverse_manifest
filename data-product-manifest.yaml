@@ -1,117 +1,314 @@
 version: 0.1.0
-jobId: "139"
-jobName: Section Department Master
+jobId: "1175"
+jobName: Secondary Sales Anokhi
 jobType: Source Aligned Data Product
-alias: Load_final_state_for_EMS_Section_Department_Mapping
+alias: Load_Secondary_Sales_Data
 discoveryPort:
-  name: Section Department Master
-  description: ""
-  category: ""
-  image: https://google.com
-  autofillUserinfo: ""
-  tags: []
-  extra: {}
-  shortDescription: Short Description
-  longDescription: Long Long Long Description
-  industryDomain: ""
-  function: ""
-  regulatoryFields:
-    dataPrivacy: ""
-    customerInfo: ""
-    dataOrigin: ""
-    monetaryInfo: ""
+  name: Secondary Sales Anokhi
 inputPorts:
-  - alias: EMS_Section_Department_Mapping_1
-    description: EMS Section Department Mapping
+  - alias: Secondary_Sales_1
+    description: Secondary Sales
     tags: []
     extra: {}
     syncType: pull
-    type: s3-csv
-    dataSetUrn: urn:dv:dataset:73080aed-60fb-4b7b-8e54-ba251fd73c7f
+    type: s3-parquet
+    dataSetUrn: urn:dv:dataset:5a075ca4-46b2-4988-ba1b-16c0cdf30f4f
     filter: ""
     projection: []
     dataProductUrn: ""
     persistDataFrame: false
     entity:
       advanceOptions:
-        mergeSchema: false
+        mergeSchema: true
 productState:
-  alias: Load_final_state_for_EMS_Section_Department_Mapping
-  refreshInterval: ""
+  alias: Load_Secondary_Sales_Data
+  refreshInterval: 0 0 * * *
   retentionVersions: ""
   updateStrategy: Overwrite
   logicalSchema:
     properties:
-      etl_inserted_date:
+      pk_id:
+        type: STRING
+        description: ""
+      granularity:
+        type: STRING
+        description: ""
+      rowid:
+        type: STRING
+        description: ""
+      formatting:
+        type: STRING
+        description: ""
+      createddate:
+        type: STRING
+        description: ""
+      modifieddate:
+        type: STRING
+        description: ""
+      createdby:
+        type: STRING
+        description: ""
+      modifiedby:
+        type: STRING
+        description: ""
+      createdip:
+        type: STRING
+        description: ""
+      modifiedip:
+        type: STRING
+        description: ""
+      region:
+        type: STRING
+        description: ""
+      zsmcode:
+        type: STRING
+        description: ""
+      zsmname:
+        type: STRING
+        description: ""
+      ahcode:
+        type: STRING
+        description: ""
+      ahname:
+        type: STRING
+        description: ""
+      asmcode:
+        type: STRING
+        description: ""
+      asmname:
+        type: STRING
+        description: ""
+      socode:
+        type: STRING
+        description: ""
+      soname:
+        type: STRING
+        description: ""
+      statename:
+        type: STRING
+        description: ""
+      town:
+        type: STRING
+        description: ""
+      stockistcode:
+        type: STRING
+        description: ""
+      stockistname:
+        type: STRING
+        description: ""
+      stockisttype:
+        type: STRING
+        description: ""
+      ssmcode:
+        type: STRING
+        description: ""
+      ssmname:
+        type: STRING
+        description: ""
+      ssmclass:
+        type: STRING
+        description: ""
+      ssmsubclass:
+        type: STRING
+        description: ""
+      ssmcompcode:
+        type: STRING
+        description: ""
+      ssmstatus:
+        type: STRING
+        description: ""
+      retailerid:
+        type: STRING
+        description: ""
+      retailercode:
+        type: STRING
+        description: ""
+      retailername:
+        type: STRING
+        description: ""
+      nature_of_business:
+        type: STRING
+        description: ""
+      type_of_outlet:
+        type: STRING
+        description: ""
+      outlet_class:
+        type: STRING
+        description: ""
+      rtrcmpcode:
+        type: STRING
+        description: ""
+      reachcode:
+        type: STRING
+        description: ""
+      giscode:
+        type: STRING
+        description: ""
+      gsttinnumber:
+        type: STRING
+        description: ""
+      year:
+        type: STRING
+        description: ""
+      month:
+        type: STRING
+        description: ""
+      billno:
+        type: STRING
+        description: ""
+      billdate:
         type: DATETIME
         description: ""
-      etl_modified_date:
+      bgcode:
+        type: STRING
+        description: ""
+      bgname:
+        type: STRING
+        description: ""
+      categoryid:
+        type: STRING
+        description: ""
+      categorycode:
+        type: STRING
+        description: ""
+      category:
+        type: STRING
+        description: ""
+      asbrandid:
+        type: STRING
+        description: ""
+      brandcode:
+        type: STRING
+        description: ""
+      brand:
+        type: STRING
+        description: ""
+      variantid:
+        type: STRING
+        description: ""
+      variantcode:
+        type: STRING
+        description: ""
+      variant:
+        type: STRING
+        description: ""
+      skuid:
+        type: STRING
+        description: ""
+      skucode:
+        type: STRING
+        description: ""
+      sku:
+        type: STRING
+        description: ""
+      productid:
+        type: STRING
+        description: ""
+      productcode:
+        type: STRING
+        description: ""
+      productname:
+        type: STRING
+        description: ""
+      batchno:
+        type: STRING
+        description: ""
+      productupc:
+        type: STRING
+        description: ""
+      drishtiorderno:
+        type: STRING
+        description: ""
+      pono:
+        type: STRING
+        description: ""
+      podate:
         type: DATETIME
         description: ""
-      etl_created_by:
+      sfaorderno:
         type: STRING
         description: ""
-      etl_updated_by:
+      sfaordate:
+        type: DATETIME
+        description: ""
+      sfalat:
         type: STRING
         description: ""
-      Directorate:
+      sfalng:
         type: STRING
         description: ""
-      Division:
+      starttime:
         type: STRING
         description: ""
-      Department:
+      endtime:
         type: STRING
         description: ""
-      Section:
+      pcs:
         type: STRING
         description: ""
-      EMS_Section_Name:
+      cases:
         type: STRING
         description: ""
-      Shop:
+      value_ptr:
         type: STRING
         description: ""
-      Status:
+      salesvalue:
         type: STRING
         description: ""
-      Data_View:
+      value_pts:
         type: STRING
         description: ""
-      Breakdown_View:
+      newproduct:
         type: STRING
         description: ""
-      SUB_Group:
+      test:
         type: STRING
         description: ""
-      BOM_View:
+      state:
         type: STRING
         description: ""
-      Plant_Location:
+      district:
         type: STRING
         description: ""
-  enforceSchemaMethod: ""
+      focusbrand:
+        type: STRING
+        description: ""
+      design:
+        type: STRING
+        description: ""
+      bucode:
+        type: STRING
+        description: ""
+      buname:
+        type: STRING
+        description: ""
+  enforceSchemaMethod: Warning
   enforceSchema: true
   enableDataReconciliation: false
   isProfilingEnabled: false
-  tableName: Section_Department_Master
+  tableName: secondary_sales
   stateStoreType: iceberg
 transformation:
-  - alias: SelectColumns
+  - alias: Spark_SQL_1
     type: SQL
-    description: Select Columns
-    query: select current_timestamp() as etl_inserted_date,current_timestamp() as
-      etl_modified_date,'platform_admin' as etl_created_by,'platform_admin' as
-      etl_updated_by,Directorate,Division,Department,Section,`EMS Section Name`
-      as EMS_Section_Name,Shop,Status,`Data View` as Data_View,`Breakdown View`
-      as Breakdown_View,`SUB Group` as SUB_Group,`BOM View` as BOM_View,`Plant
-      Location` AS Plant_Location from df_master
+    description: Read all data
+    query: select * from secondary_sales
     sequenceNo: 2
     references:
-      - alias: EMS_Section_Department_Mapping_1
-        sqlReference: df_master
+      - alias: Secondary_Sales_1
+        sqlReference: secondary_sales
 controlPort:
-  dataQualityRules: {}
+  dataQualityRules:
+    NullValueCheck:
+      productState:
+        checks:
+          - column: retailername
+            expression: ==
+            number: 1
+          - column: statename
+            expression: ==
+            number: 1
+        referenceAlias: Load_Secondary_Sales_Data
 outputPort:
   subscriptionChannels:
     - channelType: JDBC
