@@ -1,12 +1,12 @@
 version: 0.1.0
 jobId: "1175"
-jobName: Secondary Sales Anokhi
+jobName: Secondary Sales 30Aug
 jobType: Source Aligned Data Product
-alias: Load_Secondary_Sales_Data
+alias: Load_Secondary_Sales_Data_30Aug
 discoveryPort:
   name: Secondary Sales Anokhi
 inputPorts:
-  - alias: Secondary_Sales_1
+  - alias: Secondary_Sales_30Aug
     description: Secondary Sales
     tags: []
     extra: {}
@@ -21,7 +21,7 @@ inputPorts:
       advanceOptions:
         mergeSchema: true
 productState:
-  alias: Load_Secondary_Sales_Data
+  alias: Load_Secondary_Sales_Data_30Aug
   refreshInterval: 0 22 * * *
   retentionVersions: ""
   updateStrategy: Overwrite
@@ -308,8 +308,8 @@ controlPort:
           - column: statename
             expression: ==
             number: 1
-        referenceAlias: Load_Secondary_Sales_Data
+        referenceAlias: Load_Secondary_Sales_Data_30Aug
 outputPort:
   subscriptionChannels:
-    - channelType: JDBC
+    - channelType: Postgres
       queryType: SQL
