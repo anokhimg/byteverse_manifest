@@ -1,11 +1,11 @@
-version: 0.1.1
+version: 0.1.2
 jobId: "9"
 jobName: Weather API Curated Test
 jobType: Curated Data Product
 alias: Postgres_check
 discoveryPort:
   name: Postgres Check
-  description: ""
+  description: "THE GENZ Description"
   category: ""
   image: https://google.com
   autofillUserinfo: ""
