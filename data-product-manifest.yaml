@@ -1,4 +1,4 @@
-version: 0.1.0
+version: 0.1.1
 jobId: "7"
 jobName: Weather API Test Manifest creation
 jobType: Source Aligned Data Product
