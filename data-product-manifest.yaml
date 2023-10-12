@@ -4,7 +4,7 @@ jobName: Weather API Test Manifest creation
 jobType: Source Aligned Data Product
 alias: Load_final_state_aneree_sale
 discoveryPort:
-  name: Weather API Test Manifest creation Sale 0.1.5
+  name: Weather API Test Manifest creation Sale 0.1.4
   category: ""
   image: https://google.comabcd
   autofillUserinfo: ""
@@ -100,8 +100,8 @@ productState:
   enforceSchema: true
   updateStrategyOptions: {}
   isProfilingEnabled: false
-  tableName: Weather1
-  stateStoreType: redshift
+  tableName: Weather
+  stateStoreType: iceberg
 transformation:
   - alias: Spark_SQL_1
     type: SQL
