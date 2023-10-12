@@ -1,17 +1,17 @@
-version: 0.1.3
+version: 0.1.4
 jobId: "7"
 jobName: Weather API Test Manifest creation
 jobType: Source Aligned Data Product
 alias: Load_final_state_aneree_sale
 discoveryPort:
-  name: Weather API Test Manifest creation Sale
+  name: Weather API Test Manifest creation Sale 0.1.4
   category: ""
-  image: https://google.com
+  image: https://google.comabcd
   autofillUserinfo: ""
   tags: []
   extra: {}
   shortDescription: ShortDescription
-  longDescription: LongLongLongDescriptionDescription
+  longDescription: LongLongLongDescriptionDescription for Version
   industryDomain: "PMS"
   function: "PMS"
   regulatoryFields:
