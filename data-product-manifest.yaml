@@ -1,4 +1,4 @@
-version: 0.1.5
+version: 0.1.6
 jobId: "7"
 jobName: Weather API Test Manifest creation
 jobType: Source Aligned Data Product
@@ -115,4 +115,6 @@ controlPort:
 outputPort:
   subscriptionChannels:
     - channelType: JDBC
+      queryType: SQL
+    - channelType: Postgres
       queryType: SQL
