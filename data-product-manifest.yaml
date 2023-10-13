@@ -1,4 +1,4 @@
-version: 0.1.7
+version: 0.1.8
 jobId: "7"
 jobName: Weather API Test Manifest creation
 jobType: Source Aligned Data Product
@@ -11,7 +11,7 @@ discoveryPort:
   tags: []
   extra: {}
   shortDescription: ShortDescription
-  longDescription: LongLongLongDescriptionDescription for Version 0.1.7
+  longDescription: LongLongLongDescriptionDescription for Version 0.1.8
   industryDomain: "PMS"
   function: "PMS"
   regulatoryFields:
