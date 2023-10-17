@@ -4,9 +4,9 @@ jobName: test1234567
 jobType: Source Aligned Data Product
 alias: sadsa
 discoveryPort:
-  name: test1234567
+  name: test123456789
 inputPorts:
-  - alias: weather_day_1
+  - alias: weather_day_1_2
     description: weather day
     tags: []
     extra: {}
