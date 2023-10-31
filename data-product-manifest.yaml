@@ -1,315 +1,303 @@
-version: 0.1.0
-jobId: "1175"
-jobName: Secondary Sales Anokhi
+version: 0.1.29
+jobId: "125"
+jobName: Item Master
 jobType: Source Aligned Data Product
-alias: Load_Secondary_Sales_Data
+alias: Load_final_state_for_EMS_Item_Enquiry
 discoveryPort:
-  name: Secondary Sales Anokhi
+  name: Item Master
 inputPorts:
-  - alias: Secondary_Sales_1
-    description: Secondary Sales
+  - alias: MMAT_ITEM_COMP_1
+    description: MMAT_ITEM_COMP
     tags: []
     extra: {}
     syncType: pull
     type: s3-parquet
-    dataSetUrn: urn:dv:dataset:5a075ca4-46b2-4988-ba1b-16c0cdf30f4f
+    dataSetUrn: urn:dv:dataset:06bfa332-d03e-43a0-ae51-dd0ecce3fdd7
     filter: ""
     projection: []
-    dataProductUrn: ""
     persistDataFrame: false
     entity:
       advanceOptions:
         mergeSchema: true
+  - alias: MMAT_COMP_1
+    description: MMAT_COMP
+    tags: []
+    extra: {}
+    syncType: pull
+    type: s3-parquet
+    dataSetUrn: urn:dv:dataset:1c1b55aa-3f51-4dfb-abe4-0edc715fa274
+    filter: ""
+    projection: []
+    persistDataFrame: false
+    entity:
+      advanceOptions:
+        mergeSchema: true
+  - alias: DEPTDIVMASTER_1
+    description: DEPTDIVMASTER
+    tags: []
+    extra: {}
+    syncType: pull
+    type: s3-parquet
+    dataSetUrn: urn:dv:dataset:4b5136c6-d2d6-4ea5-b887-7bbbdeca7a48
+    filter: ""
+    projection: []
+    persistDataFrame: false
+    entity:
+      advanceOptions:
+        mergeSchema: true
+  - alias: RUNNINGMODELMAPPINGSTATUS_1
+    description: RUNNINGMODELMAPPINGSTATUS
+    tags: []
+    extra: {}
+    syncType: pull
+    type: s3-csv
+    dataSetUrn: urn:dv:dataset:8f2d81b1-7708-4585-b22d-59dc29e760ba
+    filter: ""
+    projection: []
+    persistDataFrame: false
+    entity:
+      advanceOptions:
+        mergeSchema: false
 productState:
-  alias: Load_Secondary_Sales_Data
-  refreshInterval: 0 22 * * *
+  alias: Load_final_state_for_EMS_Item_Enquiry
+  refreshInterval: 15 3 * * *
   retentionVersions: ""
   updateStrategy: Overwrite
   logicalSchema:
     properties:
-      pk_id:
+      Root_Comp_Code:
         type: STRING
-        description: ""
-      granularity:
+        description: COLUMN DEFINITION DERIVED FROM ATTRIBUTE CODE
+      Packing_Type:
         type: STRING
-        description: ""
-      rowid:
+        description: Type of packing in which the part would be sold.
+      Item_Sub_Type:
         type: STRING
-        description: ""
-      formatting:
-        type: STRING
-        description: ""
-      createddate:
-        type: STRING
-        description: ""
-      modifieddate:
-        type: STRING
-        description: ""
-      createdby:
-        type: STRING
-        description: ""
-      modifiedby:
-        type: STRING
-        description: ""
-      createdip:
-        type: STRING
-        description: ""
-      modifiedip:
-        type: STRING
-        description: ""
-      region:
-        type: STRING
-        description: ""
-      zsmcode:
-        type: STRING
-        description: ""
-      zsmname:
-        type: STRING
-        description: ""
-      ahcode:
-        type: STRING
-        description: ""
-      ahname:
-        type: STRING
-        description: ""
-      asmcode:
-        type: STRING
-        description: ""
-      asmname:
-        type: STRING
-        description: ""
-      socode:
-        type: STRING
-        description: ""
-      soname:
-        type: STRING
-        description: ""
-      statename:
-        type: STRING
-        description: ""
-      town:
-        type: STRING
-        description: ""
-      stockistcode:
-        type: STRING
-        description: ""
-      stockistname:
-        type: STRING
-        description: ""
-      stockisttype:
-        type: STRING
-        description: ""
-      ssmcode:
-        type: STRING
-        description: ""
-      ssmname:
-        type: STRING
-        description: ""
-      ssmclass:
-        type: STRING
-        description: ""
-      ssmsubclass:
-        type: STRING
-        description: ""
-      ssmcompcode:
-        type: STRING
-        description: ""
-      ssmstatus:
-        type: STRING
-        description: ""
-      retailerid:
-        type: STRING
-        description: ""
-      retailercode:
-        type: STRING
-        description: ""
-      retailername:
-        type: STRING
-        description: ""
-      nature_of_business:
-        type: STRING
-        description: ""
-      type_of_outlet:
-        type: STRING
-        description: ""
-      outlet_class:
-        type: STRING
-        description: ""
-      rtrcmpcode:
-        type: STRING
-        description: ""
-      reachcode:
-        type: STRING
-        description: ""
-      giscode:
-        type: STRING
-        description: ""
-      gsttinnumber:
-        type: STRING
-        description: ""
-      year:
-        type: STRING
-        description: ""
-      month:
-        type: STRING
-        description: ""
-      billno:
-        type: STRING
-        description: ""
-      billdate:
+        description: Item type "CONS" - Consumables, "COMP" - Components (for Spares)
+      Item_Creation_Date:
         type: DATETIME
-        description: ""
-      bgcode:
+        description: COLUMN DEFINITION DERIVED FROM ATTRIBUTE CREATION DATE
+      Creation_UserId:
         type: STRING
-        description: ""
-      bgname:
+        description: Creator of record
+      Inner_Part_Flag:
         type: STRING
-        description: ""
-      categoryid:
-        type: STRING
-        description: ""
-      categorycode:
-        type: STRING
-        description: ""
-      category:
-        type: STRING
-        description: ""
-      asbrandid:
-        type: STRING
-        description: ""
-      brandcode:
-        type: STRING
-        description: ""
-      brand:
-        type: STRING
-        description: ""
-      variantid:
-        type: STRING
-        description: ""
-      variantcode:
-        type: STRING
-        description: ""
-      variant:
-        type: STRING
-        description: ""
-      skuid:
-        type: STRING
-        description: ""
-      skucode:
-        type: STRING
-        description: ""
-      sku:
-        type: STRING
-        description: ""
-      productid:
-        type: STRING
-        description: ""
-      productcode:
-        type: STRING
-        description: ""
-      productname:
-        type: STRING
-        description: ""
-      batchno:
-        type: STRING
-        description: ""
-      productupc:
-        type: STRING
-        description: ""
-      drishtiorderno:
-        type: STRING
-        description: ""
-      pono:
-        type: STRING
-        description: ""
-      podate:
+        description: Indicates whether the part can be supplied to Vendor
+      Item_Close_Date:
         type: DATETIME
-        description: ""
-      sfaorderno:
+        description: OE close date of item
+      Item_Master_Description:
         type: STRING
-        description: ""
-      sfaordate:
+        description: Description of the item
+      Item_Description:
+        type: STRING
+        description: This is the description of the item being used in the report
+      Sale_Unit:
+        type: STRING
+        description: Minimum quantity that can be sold
+      Last_Transaction_Date:
         type: DATETIME
-        description: ""
-      sfalat:
+        description: COLUMN DEFINITION DERIVED FROM ATTRIBUTE LAST TRANSACTION DATE
+      Lead_Procurement_Time:
+        type: STRING
+        description: Lead time in months for procurement of this part
+      Company_Code:
+        type: STRING
+        description: Company Code
+      Purchase_Unit:
+        type: STRING
+        description: "The unit defined for the item purchase (eg: No, kg)"
+      Semi_Finished_Flag:
+        type: STRING
+        description: Indicates whether the part is a semi-finished item
+      InHouse_Spares_Flag:
+        type: STRING
+        description: Indicates whether the part is an in-house manufactured spare part
+      VIP_Reserve_Qty:
+        type: STRING
+        description: Qty reserved for VIP orders
+      Excise_Type:
+        type: STRING
+        description: P - If in percentage, V - If in Value (Rs.)
+      Sub_Type:
+        type: STRING
+        description: AUTOCREATED - Manual intervention required
+      Schedule_Flag:
+        type: STRING
+        description: Scheduled Flag Information
+      Modvat_Close_Date:
+        type: DATETIME
+        description: Close date for taking MODVAT credit
+      Shelf_Life:
+        type: STRING
+        description: Expected shelf life in terms of number of days
+      Tool_Code:
+        type: STRING
+        description: Tool Code Information
+      Weight:
+        type: STRING
+        description: Wt of a unit in Kg.
+      Packing_Volume:
+        type: STRING
+        description: Volume of single unit in cubic cmcs.
+      Colour_Sensitivity:
+        type: STRING
+        description: Color Sensitivity Description
+      Sub_Group:
+        type: STRING
+        description: Sub group defined for the item
+      Item_Code:
+        type: STRING
+        description: COLUMN DEFINITION DERIVED FROM ATTRIBUTE CODE
+      Excise_Rate:
+        type: STRING
+        description: Excise rate
+      Start_Date:
+        type: DATETIME
+        description: OE start date of item
+      Season_Flag:
         type: STRING
         description: ""
-      sfalng:
+      Source_Code:
         type: STRING
-        description: ""
-      starttime:
+        description: I(Indian), O(Others), J(Joint Venture)
+      Excise_Form_Series_Flag:
         type: STRING
-        description: ""
-      endtime:
+        description: Excise form series flag
+      Classification:
         type: STRING
-        description: ""
-      pcs:
+        description: Classification of the item
+      Modvat_Start_Date:
+        type: DATETIME
+        description: Start date for taking MODVAT credit
+      Grade_Code:
         type: STRING
-        description: ""
-      cases:
+        description: Items ABC Grading based on Movement
+      Modified_Date:
+        type: DATETIME
+        description: modified date
+      Inventory_Flag:
         type: STRING
-        description: ""
-      value_ptr:
+        description: Flag denoting if the item is part of the inventory
+      Item_Type:
         type: STRING
-        description: ""
-      salesvalue:
+        description: Item type "CONS" - Consumables, "COMP" - Components (for Spares)
+      Last_Trans_Date:
+        type: DATETIME
+        description: Last Transaction Date
+      Primary_Item_Flag:
         type: STRING
-        description: ""
-      value_pts:
+        description: Primary Item Flag
+      Creator:
         type: STRING
-        description: ""
-      newproduct:
+        description: Creator Information
+      comp:
         type: STRING
-        description: ""
-      test:
+        description: Company Information
+      item_direct_cons_flag:
         type: STRING
-        description: ""
-      state:
+        description: Item direct cons flag Information
+      latest_PO_Date:
         type: STRING
-        description: ""
-      district:
+        description: latest Purchase Order Date
+      Plant_Location:
         type: STRING
-        description: ""
-      focusbrand:
+        description: Plant Location Information
+      SC_Buyer_Code:
         type: STRING
-        description: ""
-      design:
+        description: Supply Chain Buyer Code
+      SC_Department:
         type: STRING
-        description: ""
-      bucode:
+        description: Supply Chain Department
+      SC_Division:
         type: STRING
-        description: ""
-      buname:
+        description: Supply Chain Division Description
+      Model_Status:
         type: STRING
-        description: ""
-  enforceSchemaMethod: Warning
+        description: Running Model Mapping Status
+      ETL_Inserted_Date:
+        type: DATETIME
+        description: ETL Audit Field to identify record insertion date
+      ETL_Modified_Date:
+        type: DATETIME
+        description: ETL Audit Field to identify record modified date
+      ETL_Created_By:
+        type: STRING
+        description: ETL Audit Field to identify record created by user
+      ETL_Updated_By:
+        type: STRING
+        description: ETL Audit Field to identify record modified by user
+  enforceSchemaMethod: ""
   enforceSchema: true
   enableDataReconciliation: false
   isProfilingEnabled: false
-  tableName: secondary_sales
+  tableName: msil_transformed_layer.Item_Master
   stateStoreType: iceberg
 transformation:
-  - alias: Spark_SQL_1
+  - alias: Join_Query
     type: SQL
-    description: Read all data
-    query: select * from secondary_sales
-    sequenceNo: 2
+    description: Join_Query
+    query: Select    ITEM_ROOT_COMP_CODE as Root_Comp_Code, ITEM_PACKING_TYPE as
+      Packing_Type, ITEM_SPR_ITEM_SUB_TYPE as Item_Sub_Type,
+      to_timestamp(ITEM_CREATION_DATE) as Item_Creation_Date, ITEM_USER_ID as
+      Creation_UserId, ITEM_INNER_PART_FLAG as Inner_Part_Flag,
+      to_timestamp(ITEM_CLOSE_DATE) as Item_Close_Date, ITEM_DESC as
+      Item_Master_Description, ITEM_DESC as Item_Description,
+      ITEM_ROOT_COMPANY_CODE as Root_Company_Code, ITEM_SALE_UNIT as Sale_Unit,
+      to_timestamp(ITEM_LAST_TRANSACTION_DATE) as Last_Transaction_Date,
+      ITEM_LEAD_TIME_PROC as Lead_Procurement_Time, ITEM_COMP_CODE as
+      Company_Code, ITEM_PURU_PURHASE_UNIT as Purchase_Unit, ITEM_SF_FLAG as
+      Semi_Finished_Flag, ITEM_INHOUSE_SPARES_FLAG as InHouse_Spares_Flag,
+      ITEM_VIP_RESV as VIP_Reserve_Qty, ITEM_EXCISE_TYPE as Excise_Type,
+      ITEM_SUB_TYPE as Sub_Type, ITEM_SCHEDULE_FLAG as Schedule_Flag,
+      to_timestamp(ITEM_MODVAT_CLOSE_DATE) as Modvat_Close_Date, ITEM_SHELF_LIFE
+      as Shelf_Life, ITEM_TOOL_CODE as Tool_Code, ITEM_WEIGHT as Weight,
+      ITEM_PACKING_VOL as Packing_Volume, ITEM_COLOUR_SENSITIVITY as
+      Colour_Sensitivity, ITEM_SUB_GROUP as Sub_Group, ITEM_CODE as Item_Codes,
+      ITEM_EXCISE_RATE as Excise_Rate, to_timestamp(ITEM_START_DATE) as
+      Start_Date, ITEM_SEASON_FLAG as Season_Flag,
+      to_timestamp(ITEM_LAST_TRANS_DATE) as Last_Trans_Date, ITEM_SOURCE_CODE as
+      Source_Code, ITEM_EXCISE_FORM_SERIES_FLAG as Excise_Form_Series_Flag,
+      ITEM_CLASSIFICATION as Classification,
+      to_timestamp(ITEM_MODVAT_START_DATE) as Modvat_Start_Date, ITEM_ABC_CODE
+      as Grade_Code, to_timestamp(ITEM_MODIFIED_DATE) as Modified_Date,
+      ITEM_INVENTORY_FLAG as Inventory_Flag, ITEM_TYPE as Item_Type,
+      ITEM_SCRAP_CODE as Primary_Item_Flag, Item_User_Id as Creator,
+      df_mmat_comp.comp_short_name as comp, df_mmat_comp.Comp_Name as
+      Plant_Location, df_mmat_item_comp.item_direct_cons_flag, '' as
+      latest_PO_Date, current_date as ETL_Inserted_Date, current_date as
+      ETL_Modified_Date, 'Platform_admin' as ETL_Created_By, 'Platform_admin' as
+      ETL_Updated_By  from df_mmat_item_comp Left Join  df_mmat_comp  on
+      df_mmat_item_comp.item_comp_code = df_mmat_comp.comp_code
+    sequenceNo: 3
     references:
-      - alias: Secondary_Sales_1
-        sqlReference: secondary_sales
+      - alias: MMAT_ITEM_COMP_1
+        sqlReference: df_mmat_item_comp
+      - alias: MMAT_COMP_1
+        sqlReference: df_mmat_comp
+  - alias: SelectColumns
+    type: SQL
+    description: Select all Columns
+    query: select
+      DISTINCT   Root_Comp_Code,   Packing_Type,   Item_Sub_Type,   Item_Creation_Date,   Creation_UserId,   Inner_Part_Flag,   Item_Close_Date,   Item_Master_Description,   Item_Description,   Root_Company_Code,   Sale_Unit,   Last_Transaction_Date,   Lead_Procurement_Time,   Company_Code,   Purchase_Unit,   Semi_Finished_Flag,   InHouse_Spares_Flag,   VIP_Reserve_Qty,   Excise_Type,   Sub_Type,   Schedule_Flag,   Modvat_Close_Date,   Shelf_Life,   Tool_Code,   Weight,   Packing_Volume,   Colour_Sensitivity,   Sub_Group,   Item_Codes,   Excise_Rate,   Start_Date,   Season_Flag,   Last_Trans_Date,   Source_Code,   Excise_Form_Series_Flag,   Classification,   Modvat_Start_Date,   Grade_Code,   Modified_Date,   Inventory_Flag,   Item_Type,   Primary_Item_Flag,   Creator,   comp,   item_direct_cons_flag,   latest_PO_Date,   Plant_Location,    Mod.Model_Status
+      as Model_Status,   current_timestamp() as
+      etl_inserted_date,   current_timestamp() as
+      etl_modified_date,   'platform_admin' as
+      etl_created_by,   'platform_admin' as etl_updated_by
+      from   df_join    LEFT Join (Select Part_no, Model_Status from
+      RunningModel group by Part_no, Model_Status) Mod on Item_Codes =
+      substring(Mod.Part_no, 0, 11)
+    sequenceNo: 6
+    references:
+      - alias: Join_Query
+        sqlReference: df_join
+      - alias: DEPTDIVMASTER_1
+        sqlReference: DeptDivMaster
+      - alias: RUNNINGMODELMAPPINGSTATUS_1
+        sqlReference: RunningModel
 controlPort:
-  dataQualityRules:
-    NullValueCheck:
-      productState:
-        checks:
-          - column: retailername
-            expression: ==
-            number: 1
-          - column: statename
-            expression: ==
-            number: 1
-        referenceAlias: Load_Secondary_Sales_Data
+  dataQualityRules: {}
 outputPort:
   subscriptionChannels:
-    - channelType: JDBC
+    - channelType: Postgres
       queryType: SQL
