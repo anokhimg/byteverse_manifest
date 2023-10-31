@@ -6,58 +6,24 @@ alias: Load_final_state_for_EMS_Item_Enquiry
 discoveryPort:
   name: Item Master
 inputPorts:
-  - alias: MMAT_ITEM_COMP_1
-    description: MMAT_ITEM_COMP
-    tags: []
-    extra: {}
-    syncType: pull
-    type: s3-parquet
-    dataSetUrn: urn:dv:dataset:06bfa332-d03e-43a0-ae51-dd0ecce3fdd7
-    filter: ""
-    projection: []
-    persistDataFrame: false
-    entity:
-      advanceOptions:
-        mergeSchema: true
-  - alias: MMAT_COMP_1
-    description: MMAT_COMP
-    tags: []
-    extra: {}
-    syncType: pull
-    type: s3-parquet
-    dataSetUrn: urn:dv:dataset:1c1b55aa-3f51-4dfb-abe4-0edc715fa274
-    filter: ""
-    projection: []
-    persistDataFrame: false
-    entity:
-      advanceOptions:
-        mergeSchema: true
-  - alias: DEPTDIVMASTER_1
-    description: DEPTDIVMASTER
-    tags: []
-    extra: {}
-    syncType: pull
-    type: s3-parquet
-    dataSetUrn: urn:dv:dataset:4b5136c6-d2d6-4ea5-b887-7bbbdeca7a48
-    filter: ""
-    projection: []
-    persistDataFrame: false
-    entity:
-      advanceOptions:
-        mergeSchema: true
-  - alias: RUNNINGMODELMAPPINGSTATUS_1
-    description: RUNNINGMODELMAPPINGSTATUS
+  - alias: PMS_Transactions_1
+    description: PMS Transactions
     tags: []
     extra: {}
     syncType: pull
     type: s3-csv
-    dataSetUrn: urn:dv:dataset:8f2d81b1-7708-4585-b22d-59dc29e760ba
+    dataSetUrn: urn:dv:dataset:aab2feae-580d-4f1f-9bd0-4a6b59872330
     filter: ""
     projection: []
-    persistDataFrame: false
-    entity:
-      advanceOptions:
-        mergeSchema: false
+  - alias: PMS_Master_2
+    description: PMS Master
+    tags: []
+    extra: {}
+    syncType: pull
+    type: s3-csv
+    dataSetUrn: urn:dv:dataset:79c7ffb6-9365-42b0-ba63-fc3f561a4e74
+    filter: ""
+    projection: []
 productState:
   alias: Load_final_state_for_EMS_Item_Enquiry
   refreshInterval: 15 3 * * *
