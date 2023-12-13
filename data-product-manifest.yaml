@@ -1,4 +1,4 @@
-version: 0.0.6
+version: 0.0.7
 jobId: "1254"
 jobName: Test SADP 13 Dec - MySQL
 jobType: Source Aligned Data Product
@@ -27,6 +27,7 @@ productState:
   persistDataFrame: false
   enableDataReconciliation: false
   enforceSchema: false
+  enforceSchemaMethod: Error
   stepName: Test Mysql SM
   connection: ""
   tableName/query: select * from test_tablename
@@ -34,11 +35,14 @@ productState:
   isStateManagement: true
   sequence: 3
   alias: Test_Mysql_SM
-  refreshInterval: 00 10 1 10 *
+  refreshInterval: 0 10 1 10 *
   retentionVersions: ""
-  logicalSchema: ""
-  enforceSchemaMethod: ""
-  isProfilingEnabled: false
+  logicalSchema:
+    properties:
+      column1:
+        type: STRING
+        description: ""
+  isProfilingEnabled: true
 transformation:
   - alias: EMR_PySpark_1
     arguments: ""
