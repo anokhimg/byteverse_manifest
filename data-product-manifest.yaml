@@ -1,113 +1,59 @@
-version: 0.1.0
-jobId: "7"
-jobName: Weather API Test Manifest creation
+version: 0.0.5
+jobId: "1254"
+jobName: Test SADP 13 Dec - MySQL
 jobType: Source Aligned Data Product
-alias: Load_final_state_1
+alias: Test_Mysql_SM
 discoveryPort:
-  name: Weather API Test Manifest creation 1
-  category: ""
-  image: https://google.com
-  autofillUserinfo: ""
-  tags: []
-  extra: {}
-  shortDescription: ShortDescription
-  longDescription: LongLongLongDescriptionDescription
-  industryDomain: "PMS"
-  function: "PMS"
+  name: Test SADP 13 Dec - MySQL
 inputPorts:
-  - alias: Weather_Full_Data_1
-    description: Weather Full Data
-    tags: []
-    extra: {}
-    syncType: pull
-    type: s3-csv
-    dataSetUrn: urn:dv:dataset:8df27fe0-a881-443e-ae1b-9168fd38621a
+  - alias: Weather_API_Daily_8Sept_1
+    isDynamic: true
+    dataProductUrn: urn:dv:dataproduct:eda34191-7924-42fe-a2c2-b8c496ca7834
+    projection: ""
     filter: ""
-    projection: []
-    dataProductUrn: ""
-    persistDataFrame: false
+    warehousePath: "***s3StateBucket***"
+    type: readDataIceberg
+    catalogName: glue
+    optional:
+      persistDataFrame: false
+      advanceOptions:
+        endPoint: s3.undefined.amazonaws.com
+        accessKey: abc
+        secretKey: abc
+      dataProductUrn: urn:dv:dataproduct:eda34191-7924-42fe-a2c2-b8c496ca7834
+    tableName: select * from
+      glue.***catalogReference***.`eda34191-7924-42fe-a2c2-b8c496ca7834`
 productState:
-  alias: Load_final_state_1
-  refreshInterval: "0 0 * 9 1"
+  persistDataFrame: false
+  enableDataReconciliation: false
+  enforceSchema: false
+  stepName: Test Mysql SM
+  connection: ""
+  tableName/query: test_tablename
+  type: readMySqlDbUsingJdbc
+  isStateManagement: true
+  sequence: 3
+  alias: Test_Mysql_SM
+  refreshInterval: 00 10 1 10 *
   retentionVersions: ""
-  updateStrategy: append
-  logicalSchema:
-    properties:
-      City:
-        type: STRING
-      Region:
-        type: STRING
-      Country:
-        type: STRING
-      Latitude:
-        type: STRING
-      Longitude:
-        type: STRING
-      Timezone:
-        type: STRING
-      Local Time:
-        type: STRING
-      Cloud ID:
-        type: STRING
-      Feels like Celcius:
-        type: STRING
-      Feels like fahrenheit:
-        type: STRING
-      Gust speed in kph:
-        type: STRING
-      Gust speed in mph:
-        type: STRING
-      Humidity:
-        type: STRING
-      Is day time?:
-        type: STRING
-      Last update:
-        type: STRING
-      Last updated time in epoch:
-        type: STRING
-      Precipitation in inch:
-        type: STRING
-      Precipitation in mm:
-        type: STRING
-      Pressure:
-        type: STRING
-      Precipitation in mb:
-        type: STRING
-      Temperature in celcius:
-        type: STRING
-      Temperature in fahrenheit:
-        type: STRING
-      UV:
-        type: STRING
-      Visibility in km:
-        type: STRING
-      Visibility in miles:
-        type: STRING
-      Wind Degree:
-        type: STRING
-      Wind Direction:
-        type: STRING
-      Wind in kph:
-        type: STRING
-      Wind in mph:
-        type: STRING
+  logicalSchema: ""
   enforceSchemaMethod: ""
-  enforceSchema: true
-  updateStrategyOptions: {}
   isProfilingEnabled: false
-  tableName: Weather
-  stateStoreType: iceberg
 transformation:
-  - alias: Spark_SQL_1
-    type: SQL
-    description: Select all data
-    query: select * from weather
+  - alias: EMR_PySpark_1
+    arguments: ""
+    pythonFilePath: test
+    optional:
+      pythonExtraZipFilePath: test
+      pythonEnvTarGZPath: test
+    type: customPySparkEMRServerless
+    sequence: 2
     references:
-      - alias: Weather_Full_Data_1
-        sqlReference: weather
+      - alias: Weather_API_Daily_8Sept_1
+        sqlReference: test
 controlPort:
   dataQualityRules: {}
 outputPort:
   subscriptionChannels:
-    - channelType: JDBC
+    - channelType: Postgres
       queryType: SQL
