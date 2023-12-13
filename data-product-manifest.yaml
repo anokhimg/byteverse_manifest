@@ -56,6 +56,7 @@ transformation:
     references:
       - alias: Weather_API_Daily_8Sept_1
         sqlReference: test
+    query: select * from usersS3
 controlPort:
   dataQualityRules: {}
 outputPort:
