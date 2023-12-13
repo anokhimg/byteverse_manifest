@@ -1,4 +1,4 @@
-version: 0.0.1
+version: 0.0.2
 jobId: "1255"
 jobName: Test ADP - 13 Dec
 jobType: Aggregated Data Product
@@ -28,7 +28,11 @@ productState:
   isDynamic: true
   alias: test
   retentionVersions: ""
-  logicalSchema: ""
+  logicalSchema:
+    properties:
+      city:
+        type: STRING
+        description: ""
   stateStoreType: saveTableDB
   isProfilingEnabled: true
   updateStrategy: Overwrite
