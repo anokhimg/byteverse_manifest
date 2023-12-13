@@ -1,4 +1,4 @@
-version: 0.0.5
+version: 0.0.6
 jobId: "1254"
 jobName: Test SADP 13 Dec - MySQL
 jobType: Source Aligned Data Product
@@ -29,7 +29,7 @@ productState:
   enforceSchema: false
   stepName: Test Mysql SM
   connection: ""
-  tableName/query: test_tablename
+  tableName/query: select * from test_tablename
   type: readMySqlDbUsingJdbc
   isStateManagement: true
   sequence: 3
