@@ -1,4 +1,4 @@
-version: 0.0.7
+version: 0.0.8
 jobId: "1254"
 jobName: Test SADP 13 Dec - MySQL
 jobType: Source Aligned Data Product
@@ -9,8 +9,8 @@ inputPorts:
   - alias: Weather_API_Daily_8Sept_1
     isDynamic: true
     dataProductUrn: urn:dv:dataproduct:eda34191-7924-42fe-a2c2-b8c496ca7834
-    projection: ""
-    filter: ""
+    projection: test
+    filter: test
     warehousePath: "***s3StateBucket***"
     type: readDataIceberg
     catalogName: glue
@@ -21,8 +21,9 @@ inputPorts:
         accessKey: abc
         secretKey: abc
       dataProductUrn: urn:dv:dataproduct:eda34191-7924-42fe-a2c2-b8c496ca7834
-    tableName: select * from
-      glue.***catalogReference***.`eda34191-7924-42fe-a2c2-b8c496ca7834`
+    tableName: select test from
+      glue.***catalogReference***.`eda34191-7924-42fe-a2c2-b8c496ca7834` where
+      test
 productState:
   persistDataFrame: false
   enableDataReconciliation: false
