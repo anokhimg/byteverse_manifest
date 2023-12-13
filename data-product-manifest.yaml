@@ -1,10 +1,10 @@
-version: 0.0.8
-jobId: "1254"
-jobName: Test SADP 13 Dec - MySQL
-jobType: Source Aligned Data Product
-alias: Test_Mysql_SM
+version: 0.0.1
+jobId: "1255"
+jobName: Test ADP - 13 Dec
+jobType: Aggregated Data Product
+alias: test
 discoveryPort:
-  name: Test SADP 13 Dec - MySQL
+  name: Test ADP - 13 Dec
 inputPorts:
   - alias: Weather_API_Daily_8Sept_1
     isDynamic: true
@@ -25,25 +25,21 @@ inputPorts:
       glue.***catalogReference***.`eda34191-7924-42fe-a2c2-b8c496ca7834` where
       test
 productState:
-  persistDataFrame: false
-  enableDataReconciliation: false
-  enforceSchema: false
-  enforceSchemaMethod: Error
-  stepName: Test Mysql SM
-  connection: ""
-  tableName/query: select * from test_tablename
-  type: readMySqlDbUsingJdbc
-  isStateManagement: true
-  sequence: 3
-  alias: Test_Mysql_SM
-  refreshInterval: 0 10 1 10 *
+  isDynamic: true
+  alias: test
   retentionVersions: ""
-  logicalSchema:
-    properties:
-      column1:
-        type: STRING
-        description: ""
+  logicalSchema: ""
+  stateStoreType: saveTableDB
   isProfilingEnabled: true
+  updateStrategy: Overwrite
+  connection: ""
+  tableName: test
+  optional:
+    persistDataFrame: false
+    addRunIdColumn: false
+    enableDataReconciliation: false
+    enforceSchema: false
+  refreshInterval: 0 10 1 10 *
 transformation:
   - alias: EMR_PySpark_1
     arguments: ""
@@ -56,7 +52,6 @@ transformation:
     references:
       - alias: Weather_API_Daily_8Sept_1
         sqlReference: test
-    query: select * from usersS3
 controlPort:
   dataQualityRules: {}
 outputPort:
