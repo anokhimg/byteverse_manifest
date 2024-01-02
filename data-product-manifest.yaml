@@ -1,10 +1,10 @@
 version: 0.0.5
 jobId: "224"
-jobName: Test-New Branch
+jobName: Test-New Branch-v1
 jobType: Source Aligned Data Product
 alias: ""
 discoveryPort:
-  name: Test-New Branch
+  name: Test-New Branch-v1
 inputPorts:
   - alias: Iceberg_Data_Set_1
     isDynamic: true
