@@ -1,4 +1,4 @@
-version: 0.0.5
+version: 0.0.6
 jobId: "263"
 jobName: "Rescheduling DP "
 jobType: Source Aligned Data Product
@@ -69,3 +69,4 @@ outputPort:
   subscriptionChannels:
     - channelType: Postgres
       queryType: SQL
+timeout: 7
