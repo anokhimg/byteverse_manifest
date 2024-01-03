@@ -1,4 +1,4 @@
-version: 0.0.4
+version: 0.0.5
 jobId: "263"
 jobName: "Rescheduling DP "
 jobType: Source Aligned Data Product
@@ -30,24 +30,18 @@ productState:
           commonly used to demonstrate the visual form of a document or a
           typeface without relying on meaningful content. Lorem ipsum may be
           used as a placeholder before final copy is available.
-        sourceColumn: city_name
-        sourceTable: abc
       state:
         type: STRING
         description: In publishing and graphic design, Lorem ipsum is a placeholder text
           commonly used to demonstrate the visual form of a document or a
           typeface without relying on meaningful content. Lorem ipsum may be
           used as a placeholder before final copy is available.
-        sourceColumn: state_name
-        sourceTable: abc
       noOfRestaurants:
         type: STRING
         description: In publishing and graphic design, Lorem ipsum is a placeholder text
           commonly used to demonstrate the visual form of a document or a
           typeface without relying on meaningful content. Lorem ipsum may be
           used as a placeholder before final copy is available.
-        sourceColumn: restaurantID
-        sourceTable: abc
   stateStoreType: writeDataFrameToCsv
   isProfilingEnabled: true
   partitionFiles: 1
