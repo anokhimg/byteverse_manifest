@@ -1,4 +1,4 @@
-version: 0.0.9
+version: 0.0.10
 jobId: "406"
 jobName: Delivery Instructions
 jobType: Source Aligned Data Product
@@ -124,7 +124,7 @@ transformation:
     inputDataFrameList:
       - inputDataFrame: Delivery_Dataset_1
         tempViewName: temp1
-    query: select * from temp1;
+    query: select di_no,di_date from temp1;
     optional:
       persistDataFrame: false
     type: operationThroughSqlQuery
