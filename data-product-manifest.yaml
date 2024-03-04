@@ -1,4 +1,4 @@
-version: 0.0.10
+version: 0.0.11
 jobId: "406"
 jobName: Delivery Instructions
 jobType: Source Aligned Data Product
@@ -29,75 +29,6 @@ productState:
         type: STRING
         description: ""
       di_date:
-        type: STRING
-        description: ""
-      timestamp_di_date:
-        type: DATETIME
-        description: ""
-      vendor_code:
-        type: STRING
-        description: ""
-      item_code:
-        type: STRING
-        description: ""
-      item_name:
-        type: STRING
-        description: ""
-      location_code:
-        type: STRING
-        description: ""
-      plant_location:
-        type: STRING
-        description: ""
-      type:
-        type: STRING
-        description: ""
-      order_type:
-        type: STRING
-        description: ""
-      planned_di_quantity:
-        type: STRING
-        description: ""
-      utilized_quantity:
-        type: STRING
-        description: ""
-      gate_quantity:
-        type: STRING
-        description: ""
-      received_quantity:
-        type: STRING
-        description: ""
-      rejected_quantity:
-        type: STRING
-        description: ""
-      default_quantity:
-        type: STRING
-        description: ""
-      adherence_flag:
-        type: STRING
-        description: ""
-      wad_location:
-        type: STRING
-        description: ""
-      buyer_code:
-        type: STRING
-        description: ""
-      department:
-        type: STRING
-        description: ""
-      division:
-        type: STRING
-        description: ""
-      etl_inserted_date:
-        type: DATETIME
-        description: ""
-      etl_modified_date:
-        type: DATETIME
-        description: ""
-      etl_created_by:
-        type: STRING
-        description: ""
-      etl_updated_by:
         type: STRING
         description: ""
   stateStoreType: loadDataIceberg
