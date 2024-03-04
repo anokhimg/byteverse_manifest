@@ -1,4 +1,4 @@
-version: 0.0.13
+version: 0.0.14
 jobId: "406"
 jobName: Delivery Instructions
 jobType: Source Aligned Data Product
@@ -25,7 +25,7 @@ productState:
   retentionVersions: ""
   logicalSchema:
     properties:
-      location_code:
+      plant_location:
         type: STRING
         description: ""
   stateStoreType: loadDataIceberg
@@ -52,7 +52,7 @@ transformation:
     inputDataFrameList:
       - inputDataFrame: Delivery_Dataset_1
         tempViewName: temp1
-    query: select location_code from temp1;
+    query: select plant_location from temp1;
     optional:
       persistDataFrame: false
     type: operationThroughSqlQuery
