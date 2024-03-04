@@ -1,4 +1,4 @@
-version: 0.0.4
+version: 0.0.8
 jobId: "406"
 jobName: Delivery Instructions
 jobType: Source Aligned Data Product
@@ -23,12 +23,88 @@ productState:
   isDynamic: true
   alias: Load_Step
   retentionVersions: ""
-  logicalSchema: ""
+  logicalSchema:
+    properties:
+      di_no:
+        type: STRING
+        description: ""
+      di_date:
+        type: STRING
+        description: ""
+      timestamp_di_date:
+        type: DATETIME
+        description: ""
+      vendor_code:
+        type: STRING
+        description: ""
+      item_code:
+        type: STRING
+        description: ""
+      item_name:
+        type: STRING
+        description: ""
+      location_code:
+        type: STRING
+        description: ""
+      plant_location:
+        type: STRING
+        description: ""
+      type:
+        type: STRING
+        description: ""
+      order_type:
+        type: STRING
+        description: ""
+      planned_di_quantity:
+        type: STRING
+        description: ""
+      utilized_quantity:
+        type: STRING
+        description: ""
+      gate_quantity:
+        type: STRING
+        description: ""
+      received_quantity:
+        type: STRING
+        description: ""
+      rejected_quantity:
+        type: STRING
+        description: ""
+      default_quantity:
+        type: STRING
+        description: ""
+      adherence_flag:
+        type: STRING
+        description: ""
+      wad_location:
+        type: STRING
+        description: ""
+      buyer_code:
+        type: STRING
+        description: ""
+      department:
+        type: STRING
+        description: ""
+      division:
+        type: STRING
+        description: ""
+      etl_inserted_date:
+        type: DATETIME
+        description: ""
+      etl_modified_date:
+        type: DATETIME
+        description: ""
+      etl_created_by:
+        type: STRING
+        description: ""
+      etl_updated_by:
+        type: STRING
+        description: ""
   stateStoreType: loadDataIceberg
   isProfilingEnabled: false
   updateStrategy: Overwrite
   tableName: s3source.deliveryinstructions
-  warehousePath: https://bp-spark-sql-library-test-acc/
+  warehousePath: s3://bp-spark-sql-library-test-acc/
   catalogName: glue
   optional:
     persistDataFrame: false
@@ -37,6 +113,8 @@ productState:
     enforceSchemaMethod: Warning
     catalogType: glue
     connection: Base S3 Connectivity
+    loggingOptions:
+      printSchema: true
   refreshInterval: None
 transformation:
   - isDynamic: true
