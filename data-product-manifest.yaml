@@ -1,9 +1,9 @@
-version: 0.0.8
+version: 0.0.9
 jobId: "406"
 jobName: Delivery Instructions
 jobType: Source Aligned Data Product
 domain: sale
-alias: Load_Step
+alias: Load_Step_for_Delivery_Instruction
 discoveryPort:
   name: Delivery Instructions
 inputPorts:
@@ -21,7 +21,7 @@ inputPorts:
     type: inputDelimited
 productState:
   isDynamic: true
-  alias: Load_Step
+  alias: Load_Step_for_Delivery_Instruction
   retentionVersions: ""
   logicalSchema:
     properties:
