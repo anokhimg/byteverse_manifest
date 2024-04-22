@@ -1,11 +1,11 @@
 version: 0.0.14
 jobId: "406"
-jobName: Delivery Instructions
+jobName: Delivery Instructions V2
 jobType: Source Aligned Data Product
 domain: sale
 alias: Load_Step_for_Delivery_Instruction
 discoveryPort:
-  name: Delivery Instructions
+  name: Delivery Instructions V2
 inputPorts:
   - alias: Delivery_Dataset_1
     isDynamic: true
