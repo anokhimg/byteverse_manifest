@@ -1,4 +1,4 @@
-version: 0.0.6
+version: 0.0.7
 jobId: "170"
 jobName: Customer
 jobType: Source Aligned Data Product
@@ -78,4 +78,16 @@ transformation:
       persistDataFrame: false
     type: operationThroughSqlQuery
 controlPort:
-  dataQualityRules: {}
+  dataQualityRules:
+    NullValueCheck:
+      productState:
+        checks:
+          - column: C_ACCTBAL
+            expression: ">="
+            number: 0
+        referenceAlias: SADP_Creation
+    UniquenessCheck:
+      productState:
+        checks:
+          - column: C_CUSTKEY
+        referenceAlias: SADP_Creation
