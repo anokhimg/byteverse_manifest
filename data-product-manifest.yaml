@@ -1,315 +1,81 @@
-version: 0.1.0
-jobId: "1175"
-jobName: Secondary Sales Anokhi
+version: 0.0.6
+jobId: "170"
+jobName: Customer
 jobType: Source Aligned Data Product
-alias: Load_Secondary_Sales_Data
+developerId: 5fd4295c-4450-4bd6-af56-3570e9c19332
+domain: supply_chain
+alias: SADP_Creation
 discoveryPort:
-  name: Secondary Sales Anokhi
+  name: Customer
 inputPorts:
-  - alias: Secondary_Sales_1
-    description: Secondary Sales
-    tags: []
-    extra: {}
-    syncType: pull
-    type: s3-parquet
-    dataSetUrn: urn:dv:dataset:5a075ca4-46b2-4988-ba1b-16c0cdf30f4f
-    filter: ""
-    projection: []
-    dataProductUrn: ""
-    persistDataFrame: false
-    entity:
+  - alias: customer
+    isDynamic: true
+    path: s3://dataverse-supplychain/datasets/customer/
+    optional:
+      persistDataFrame: false
       advanceOptions:
         mergeSchema: true
+      enableDataReconciliation: false
+      enforceSchema: false
+      connection: Supply Chain Datasets
+      dataSetUrn: urn:dv:dataset:bfb29cc6-64e4-418e-8bf2-87282dcbdf65
+    type: inputParquet
 productState:
-  alias: Load_Secondary_Sales_Data
-  refreshInterval: 0 22 * * *
+  isDynamic: true
+  alias: SADP_Creation
   retentionVersions: ""
-  updateStrategy: Overwrite
   logicalSchema:
     properties:
-      pk_id:
+      C_CUSTKEY:
         type: STRING
-        description: ""
-      granularity:
-        type: STRING
-        description: ""
-      rowid:
-        type: STRING
-        description: ""
-      formatting:
-        type: STRING
-        description: ""
-      createddate:
-        type: STRING
-        description: ""
-      modifieddate:
-        type: STRING
-        description: ""
-      createdby:
-        type: STRING
-        description: ""
-      modifiedby:
-        type: STRING
-        description: ""
-      createdip:
-        type: STRING
-        description: ""
-      modifiedip:
-        type: STRING
-        description: ""
-      region:
-        type: STRING
-        description: ""
-      zsmcode:
-        type: STRING
-        description: ""
-      zsmname:
-        type: STRING
-        description: ""
-      ahcode:
-        type: STRING
-        description: ""
-      ahname:
-        type: STRING
-        description: ""
-      asmcode:
-        type: STRING
-        description: ""
-      asmname:
-        type: STRING
-        description: ""
-      socode:
-        type: STRING
-        description: ""
-      soname:
-        type: STRING
-        description: ""
-      statename:
-        type: STRING
-        description: ""
-      town:
-        type: STRING
-        description: ""
-      stockistcode:
-        type: STRING
-        description: ""
-      stockistname:
-        type: STRING
-        description: ""
-      stockisttype:
-        type: STRING
-        description: ""
-      ssmcode:
-        type: STRING
-        description: ""
-      ssmname:
-        type: STRING
-        description: ""
-      ssmclass:
-        type: STRING
-        description: ""
-      ssmsubclass:
-        type: STRING
-        description: ""
-      ssmcompcode:
-        type: STRING
-        description: ""
-      ssmstatus:
-        type: STRING
-        description: ""
-      retailerid:
-        type: STRING
-        description: ""
-      retailercode:
-        type: STRING
-        description: ""
-      retailername:
-        type: STRING
-        description: ""
-      nature_of_business:
-        type: STRING
-        description: ""
-      type_of_outlet:
-        type: STRING
-        description: ""
-      outlet_class:
-        type: STRING
-        description: ""
-      rtrcmpcode:
-        type: STRING
-        description: ""
-      reachcode:
-        type: STRING
-        description: ""
-      giscode:
-        type: STRING
-        description: ""
-      gsttinnumber:
+        description: Customer Key
+      C_NAME:
         type: STRING
-        description: ""
-      year:
-        type: STRING
-        description: ""
-      month:
-        type: STRING
-        description: ""
-      billno:
-        type: STRING
-        description: ""
-      billdate:
-        type: DATETIME
-        description: ""
-      bgcode:
-        type: STRING
-        description: ""
-      bgname:
-        type: STRING
-        description: ""
-      categoryid:
-        type: STRING
-        description: ""
-      categorycode:
-        type: STRING
-        description: ""
-      category:
-        type: STRING
-        description: ""
-      asbrandid:
-        type: STRING
-        description: ""
-      brandcode:
-        type: STRING
-        description: ""
-      brand:
-        type: STRING
-        description: ""
-      variantid:
-        type: STRING
-        description: ""
-      variantcode:
-        type: STRING
-        description: ""
-      variant:
-        type: STRING
-        description: ""
-      skuid:
-        type: STRING
-        description: ""
-      skucode:
-        type: STRING
-        description: ""
-      sku:
-        type: STRING
-        description: ""
-      productid:
-        type: STRING
-        description: ""
-      productcode:
+        description: Customer Full Name
+      C_ADDRESS:
         type: STRING
-        description: ""
-      productname:
-        type: STRING
-        description: ""
-      batchno:
-        type: STRING
-        description: ""
-      productupc:
-        type: STRING
-        description: ""
-      drishtiorderno:
-        type: STRING
-        description: ""
-      pono:
-        type: STRING
-        description: ""
-      podate:
-        type: DATETIME
-        description: ""
-      sfaorderno:
-        type: STRING
-        description: ""
-      sfaordate:
-        type: DATETIME
-        description: ""
-      sfalat:
-        type: STRING
-        description: ""
-      sfalng:
-        type: STRING
-        description: ""
-      starttime:
-        type: STRING
-        description: ""
-      endtime:
-        type: STRING
-        description: ""
-      pcs:
-        type: STRING
-        description: ""
-      cases:
-        type: STRING
-        description: ""
-      value_ptr:
-        type: STRING
-        description: ""
-      salesvalue:
-        type: STRING
-        description: ""
-      value_pts:
-        type: STRING
-        description: ""
-      newproduct:
-        type: STRING
-        description: ""
-      test:
-        type: STRING
-        description: ""
-      state:
-        type: STRING
-        description: ""
-      district:
+        description: Customer Address
+      C_NATIONKEY:
         type: STRING
         description: ""
-      focusbrand:
+      C_PHONE:
         type: STRING
         description: ""
-      design:
+      C_ACCTBAL:
         type: STRING
         description: ""
-      bucode:
+      C_MKTSEGMENT:
         type: STRING
         description: ""
-      buname:
+      C_COMMENT:
         type: STRING
         description: ""
-  enforceSchemaMethod: Warning
-  enforceSchema: true
-  enableDataReconciliation: false
-  isProfilingEnabled: false
-  tableName: secondary_sales
-  stateStoreType: iceberg
+  stateStoreType: loadDataIceberg
+  isProfilingEnabled: true
+  updateStrategy: Overwrite
+  tableName: s3source.customer
+  warehousePath: s3://dataverse-supplychain/SADP/
+  catalogName: iceberg
+  optional:
+    persistDataFrame: false
+    enableDataReconciliation: false
+    enforceSchema: true
+    enforceSchemaMethod: Warning
+    catalogType: glue
+    loggingOptions:
+      printSchema: true
+  refreshInterval: 00 08 * * *
 transformation:
-  - alias: Spark_SQL_1
-    type: SQL
-    description: Read all data
-    query: select * from secondary_sales
-    sequenceNo: 2
-    references:
-      - alias: Secondary_Sales_1
-        sqlReference: secondary_sales
+  - isDynamic: true
+    alias: Spark_SQL_1
+    description: Data Fetch
+    sequence: 2
+    inputDataFrameList:
+      - inputDataFrame: customer
+        tempViewName: df_customer
+    query: select * from df_customer;
+    optional:
+      persistDataFrame: false
+    type: operationThroughSqlQuery
 controlPort:
-  dataQualityRules:
-    NullValueCheck:
-      productState:
-        checks:
-          - column: retailername
-            expression: ==
-            number: 1
-          - column: statename
-            expression: ==
-            number: 1
-        referenceAlias: Load_Secondary_Sales_Data
-outputPort:
-  subscriptionChannels:
-    - channelType: JDBC
-      queryType: SQL
+  dataQualityRules: {}
