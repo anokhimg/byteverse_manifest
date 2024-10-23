@@ -1,4 +1,4 @@
-version: 0.0.8
+version: 0.0.9
 jobId: "170"
 jobName: Customer
 jobType: Source Aligned Data Product
@@ -29,27 +29,43 @@ productState:
       C_CUSTKEY:
         type: STRING
         description: Customer Key
+        sourceColumn: C_CUSTKEY_src
+        sourceTable: customer
       C_NAME:
         type: STRING
         description: Customer Full Name
+        sourceColumn: C_NAME_src
+        sourceTable: customer
       C_ADDRESS:
         type: STRING
         description: Customer Address
+        sourceColumn: C_ADDRESS_src
+        sourceTable: customer
       C_NATIONKEY:
         type: STRING
         description: ""
+        sourceColumn: C_NATIONKEY_src
+        sourceTable: customer
       C_PHONE:
         type: STRING
         description: ""
+        sourceColumn: C_PHONE_src
+        sourceTable: customer
       C_ACCTBAL:
         type: STRING
         description: ""
+        sourceColumn: C_ACCTBAL_src
+        sourceTable: customer
       C_MKTSEGMENT:
         type: STRING
         description: ""
+        sourceColumn: C_MKTSEGMENT_src
+        sourceTable: customer
       C_COMMENT:
         type: STRING
         description: ""
+        sourceColumn: C_COMMENT_src
+        sourceTable: customer
   stateStoreType: loadDataIceberg
   isProfilingEnabled: true
   updateStrategy: Overwrite
