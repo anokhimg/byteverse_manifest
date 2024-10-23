@@ -1,4 +1,4 @@
-version: 0.0.9
+version: 0.0.15
 jobId: "170"
 jobName: Customer
 jobType: Source Aligned Data Product
@@ -26,45 +26,45 @@ productState:
   retentionVersions: ""
   logicalSchema:
     properties:
-      C_CUSTKEY:
+      customer_key:
         type: STRING
         description: Customer Key
         sourceColumn: C_CUSTKEY_src
         sourceTable: customer
-      C_NAME:
+      customer_name:
         type: STRING
         description: Customer Full Name
         sourceColumn: C_NAME_src
         sourceTable: customer
-      C_ADDRESS:
+      customer_address:
         type: STRING
         description: Customer Address
-        sourceColumn: C_ADDRESS_src
+        sourceColumn: C_ADDRESS_SRC
         sourceTable: customer
-      C_NATIONKEY:
+      customer_nation:
         type: STRING
         description: ""
-        sourceColumn: C_NATIONKEY_src
+        sourceColumn: C_NATIONKEY_SRC
         sourceTable: customer
-      C_PHONE:
+      customer_phone_no:
         type: STRING
         description: ""
-        sourceColumn: C_PHONE_src
+        sourceColumn: C_PHONE_SRC
         sourceTable: customer
-      C_ACCTBAL:
+      customer_balance:
         type: STRING
         description: ""
-        sourceColumn: C_ACCTBAL_src
+        sourceColumn: C_ACCTBAL_SRC
         sourceTable: customer
-      C_MKTSEGMENT:
+      customer_marketsegment:
         type: STRING
         description: ""
-        sourceColumn: C_MKTSEGMENT_src
+        sourceColumn: C_MKTSEGMENT_SRC
         sourceTable: customer
-      C_COMMENT:
+      customer_comment:
         type: STRING
         description: ""
-        sourceColumn: C_COMMENT_src
+        sourceColumn: C_COMMENT_SRC
         sourceTable: customer
   stateStoreType: loadDataIceberg
   isProfilingEnabled: true
@@ -80,7 +80,7 @@ productState:
     catalogType: glue
     loggingOptions:
       printSchema: true
-  refreshInterval: 00 08 * * *
+  refreshInterval: None
 transformation:
   - isDynamic: true
     alias: Spark_SQL_1
@@ -89,21 +89,17 @@ transformation:
     inputDataFrameList:
       - inputDataFrame: customer
         tempViewName: df_customer
-    query: select * from df_customer;
+    query: SELECT C_CUSTKEY AS customer_key, C_NAME AS customer_name, C_ADDRESS AS
+      customer_address, C_NATIONKEY AS customer_nation, C_PHONE AS
+      customer_phone_no, C_ACCTBAL AS customer_balance, C_MKTSEGMENT AS
+      customer_marketsegment, C_COMMENT AS customer_comment FROM df_customer;
     optional:
       persistDataFrame: false
     type: operationThroughSqlQuery
 controlPort:
   dataQualityRules:
-    NullValueCheck:
-      productState:
-        checks:
-          - column: C_ACCTBAL
-            expression: ">="
-            number: 0
-        referenceAlias: SADP_Creation
     UniquenessCheck:
       productState:
         checks:
-          - column: C_CUSTKEY
+          - column: customer_key
         referenceAlias: SADP_Creation
