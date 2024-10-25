@@ -1,4 +1,3 @@
-version: 0.0.15
 jobId: "170"
 jobName: Customer
 jobType: Source Aligned Data Product
@@ -43,27 +42,27 @@ productState:
         sourceTable: customer
       customer_nation:
         type: STRING
-        description: ""
+        description: Nation identifier for the customer's location
         sourceColumn: C_NATIONKEY_SRC
         sourceTable: customer
       customer_phone_no:
         type: STRING
-        description: ""
+        description: Customer's contact phone number
         sourceColumn: C_PHONE_SRC
         sourceTable: customer
       customer_balance:
         type: STRING
-        description: ""
+        description: Account balance of the customer
         sourceColumn: C_ACCTBAL_SRC
         sourceTable: customer
       customer_marketsegment:
         type: STRING
-        description: ""
+        description: Market segment category of the customer
         sourceColumn: C_MKTSEGMENT_SRC
         sourceTable: customer
       customer_comment:
         type: STRING
-        description: ""
+        description: Additional comments about the customer
         sourceColumn: C_COMMENT_SRC
         sourceTable: customer
   stateStoreType: loadDataIceberg
