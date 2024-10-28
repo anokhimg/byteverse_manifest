@@ -38,7 +38,7 @@ productState:
   logicalSchema:
     properties:
       customer_key:
-        type: STRING
+        type: NUMBER
         description: Unique identifier for the customer
         sourceColumn: customer_key
         sourceTable: customer
@@ -53,7 +53,7 @@ productState:
         sourceColumn: customer_address
         sourceTable: customer
       customer_nation:
-        type: STRING
+        type: NUMBER
         description: Nation identifier associated with the customer
         sourceColumn: customer_nation
         sourceTable: customer
@@ -63,7 +63,7 @@ productState:
         sourceColumn: customer_phone_no
         sourceTable: customer
       customer_balance:
-        type: STRING
+        type: NUMBER
         description: Account balance of the customer
         sourceColumn: customer_balance
         sourceTable: customer
@@ -93,27 +93,27 @@ productState:
         sourceColumn: order_cust_key
         sourceTable: orders
       total_orders:
-        type: STRING
+        type: NUMBER
         description: Total number of orders placed by the customer
         sourceColumn: order_key
         sourceTable: orders
       order_total_price:
-        type: STRING
+        type: NUMBER
         description: Total price across all orders placed by the customer
         sourceColumn: order_total_price
         sourceTable: orders
       pending_orders:
-        type: STRING
+        type: NUMBER
         description: Number of pending orders placed by the customer
         sourceColumn: order_key,order_status
         sourceTable: orders
       fulfilled_orders:
-        type: STRING
+        type: NUMBER
         description: Number of fulfilled orders placed by the customer
         sourceColumn: order_key,order_status
         sourceTable: orders
       open_orders:
-        type: STRING
+        type: NUMBER
         description: Number of open orders placed by the customer
         sourceColumn: order_key,order_status
         sourceTable: orders
