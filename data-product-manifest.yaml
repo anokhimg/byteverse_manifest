@@ -128,7 +128,7 @@ productState:
         sourceColumn: order_date
         sourceTable: orders
   stateStoreType: loadDataIceberg
-  isProfilingEnabled: false
+  isProfilingEnabled: true
   updateStrategy: Overwrite
   tableName: s3source.customer360
   warehousePath: s3://dataverse-supplychain/CRDP/
