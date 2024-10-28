@@ -35,7 +35,98 @@ productState:
   isDynamic: true
   alias: Load_Customer_360_View_into_Table
   retentionVersions: ""
-  logicalSchema: ""
+  logicalSchema:
+    properties:
+      customer_key:
+        type: STRING
+        description: Unique identifier for the customer
+        sourceColumn: customer_key
+        sourceTable: customer
+      customer_name:
+        type: STRING
+        description: Full name of the customer
+        sourceColumn: customer_name
+        sourceTable: customer
+      customer_address:
+        type: STRING
+        description: Address of the customer
+        sourceColumn: customer_address
+        sourceTable: customer
+      customer_nation:
+        type: STRING
+        description: Nation identifier associated with the customer
+        sourceColumn: customer_nation
+        sourceTable: customer
+      customer_phone_no:
+        type: STRING
+        description: Contact phone number of the customer
+        sourceColumn: customer_phone_no
+        sourceTable: customer
+      customer_balance:
+        type: STRING
+        description: Account balance of the customer
+        sourceColumn: customer_balance
+        sourceTable: customer
+      customer_marketsegment:
+        type: STRING
+        description: Market segment associated with the customer
+        sourceColumn: customer_marketsegment
+        sourceTable: customer
+      customer_comment:
+        type: STRING
+        description: Additional comments related to the customer
+        sourceColumn: customer_comment
+        sourceTable: customer
+      nation_name:
+        type: STRING
+        description: Name of the nation associated with the customer
+        sourceColumn: nation_name
+        sourceTable: geography
+      region_name:
+        type: STRING
+        description: Name of the region associated with the customer
+        sourceColumn: region_name
+        sourceTable: geography
+      order_cust_key:
+        type: STRING
+        description: Unique identifier linking the order to a customer
+        sourceColumn: order_cust_key
+        sourceTable: orders
+      total_orders:
+        type: STRING
+        description: Total number of orders placed by the customer
+        sourceColumn: order_key
+        sourceTable: orders
+      order_total_price:
+        type: STRING
+        description: Total price across all orders placed by the customer
+        sourceColumn: order_total_price
+        sourceTable: orders
+      pending_orders:
+        type: STRING
+        description: Number of pending orders placed by the customer
+        sourceColumn: order_key,order_status
+        sourceTable: orders
+      fulfilled_orders:
+        type: STRING
+        description: Number of fulfilled orders placed by the customer
+        sourceColumn: order_key,order_status
+        sourceTable: orders
+      open_orders:
+        type: STRING
+        description: Number of open orders placed by the customer
+        sourceColumn: order_key,order_status
+        sourceTable: orders
+      last_order_date:
+        type: DATETIME
+        description: Date when the last order was placed by the customer
+        sourceColumn: order_date
+        sourceTable: orders
+      first_order_date:
+        type: DATETIME
+        description: Date when the first order was placed by the customer
+        sourceColumn: order_date
+        sourceTable: orders
   stateStoreType: loadDataIceberg
   isProfilingEnabled: false
   updateStrategy: Overwrite
@@ -45,7 +136,7 @@ productState:
   optional:
     persistDataFrame: false
     enableDataReconciliation: false
-    enforceSchema: false
+    enforceSchema: true
     enforceSchemaMethod: Warning
     catalogType: glue
     loggingOptions:
