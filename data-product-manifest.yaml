@@ -1,315 +1,165 @@
-version: 0.1.0
-jobId: "1175"
-jobName: Secondary Sales Anokhi
+jobId: "791"
+jobName: Test for Source Table and Column
 jobType: Source Aligned Data Product
-alias: Load_Secondary_Sales_Data
+developerId: aaf6a67f-7b8b-4d1d-981d-5a26b24475dc
+domain: domain1
+alias: Load_Data
 discoveryPort:
-  name: Secondary Sales Anokhi
+  name: Test for Source Table and Column
 inputPorts:
-  - alias: Secondary_Sales_1
-    description: Secondary Sales
-    tags: []
-    extra: {}
-    syncType: pull
-    type: s3-parquet
-    dataSetUrn: urn:dv:dataset:5a075ca4-46b2-4988-ba1b-16c0cdf30f4f
-    filter: ""
-    projection: []
-    dataProductUrn: ""
-    persistDataFrame: false
-    entity:
-      advanceOptions:
-        mergeSchema: true
+  - alias: uat_iceberg_1
+    isDynamic: true
+    tableName: iceberg_meta.scd1_data
+    warehousePath: /data/tmp/iceberg_warehouse/
+    catalogName: my_catalog
+    optional:
+      persistDataFrame: false
+      catalogType: postgres
+      enforceSchema: false
+      connection: S3 Connection
+      dataSetUrn: urn:dv:dataset:00b159c1-a20b-4752-ab5c-ccdc651095d0
+    type: readDataIceberg
 productState:
-  alias: Load_Secondary_Sales_Data
-  refreshInterval: 0 22 * * *
+  isDynamic: true
+  alias: Load_Data
   retentionVersions: ""
-  updateStrategy: Overwrite
   logicalSchema:
     properties:
-      pk_id:
-        type: STRING
-        description: ""
-      granularity:
-        type: STRING
-        description: ""
-      rowid:
-        type: STRING
-        description: ""
-      formatting:
-        type: STRING
-        description: ""
-      createddate:
-        type: STRING
-        description: ""
-      modifieddate:
-        type: STRING
-        description: ""
-      createdby:
-        type: STRING
-        description: ""
-      modifiedby:
-        type: STRING
-        description: ""
-      createdip:
-        type: STRING
-        description: ""
-      modifiedip:
-        type: STRING
-        description: ""
-      region:
-        type: STRING
-        description: ""
-      zsmcode:
-        type: STRING
-        description: ""
-      zsmname:
-        type: STRING
-        description: ""
-      ahcode:
-        type: STRING
-        description: ""
-      ahname:
-        type: STRING
-        description: ""
-      asmcode:
-        type: STRING
-        description: ""
-      asmname:
-        type: STRING
-        description: ""
-      socode:
-        type: STRING
-        description: ""
-      soname:
-        type: STRING
-        description: ""
-      statename:
-        type: STRING
-        description: ""
-      town:
-        type: STRING
-        description: ""
-      stockistcode:
-        type: STRING
-        description: ""
-      stockistname:
-        type: STRING
-        description: ""
-      stockisttype:
-        type: STRING
-        description: ""
-      ssmcode:
-        type: STRING
-        description: ""
-      ssmname:
-        type: STRING
-        description: ""
-      ssmclass:
-        type: STRING
-        description: ""
-      ssmsubclass:
-        type: STRING
-        description: ""
-      ssmcompcode:
-        type: STRING
-        description: ""
-      ssmstatus:
-        type: STRING
-        description: ""
-      retailerid:
-        type: STRING
-        description: ""
-      retailercode:
-        type: STRING
-        description: ""
-      retailername:
-        type: STRING
-        description: ""
-      nature_of_business:
-        type: STRING
-        description: ""
-      type_of_outlet:
-        type: STRING
-        description: ""
-      outlet_class:
-        type: STRING
-        description: ""
-      rtrcmpcode:
-        type: STRING
-        description: ""
-      reachcode:
-        type: STRING
-        description: ""
-      giscode:
-        type: STRING
-        description: ""
-      gsttinnumber:
-        type: STRING
-        description: ""
-      year:
-        type: STRING
-        description: ""
-      month:
-        type: STRING
-        description: ""
-      billno:
-        type: STRING
-        description: ""
-      billdate:
-        type: DATETIME
-        description: ""
-      bgcode:
-        type: STRING
-        description: ""
-      bgname:
-        type: STRING
-        description: ""
-      categoryid:
-        type: STRING
-        description: ""
-      categorycode:
-        type: STRING
-        description: ""
-      category:
-        type: STRING
-        description: ""
-      asbrandid:
-        type: STRING
-        description: ""
-      brandcode:
-        type: STRING
-        description: ""
-      brand:
-        type: STRING
-        description: ""
-      variantid:
-        type: STRING
-        description: ""
-      variantcode:
-        type: STRING
-        description: ""
-      variant:
-        type: STRING
-        description: ""
-      skuid:
-        type: STRING
-        description: ""
-      skucode:
-        type: STRING
-        description: ""
-      sku:
-        type: STRING
-        description: ""
-      productid:
-        type: STRING
-        description: ""
-      productcode:
-        type: STRING
-        description: ""
-      productname:
-        type: STRING
-        description: ""
-      batchno:
-        type: STRING
-        description: ""
-      productupc:
-        type: STRING
-        description: ""
-      drishtiorderno:
-        type: STRING
-        description: ""
-      pono:
-        type: STRING
-        description: ""
-      podate:
-        type: DATETIME
-        description: ""
-      sfaorderno:
-        type: STRING
-        description: ""
-      sfaordate:
-        type: DATETIME
-        description: ""
-      sfalat:
-        type: STRING
-        description: ""
-      sfalng:
-        type: STRING
-        description: ""
-      starttime:
-        type: STRING
-        description: ""
-      endtime:
-        type: STRING
-        description: ""
-      pcs:
-        type: STRING
-        description: ""
-      cases:
-        type: STRING
-        description: ""
-      value_ptr:
-        type: STRING
-        description: ""
-      salesvalue:
-        type: STRING
-        description: ""
-      value_pts:
-        type: STRING
-        description: ""
-      newproduct:
-        type: STRING
-        description: ""
-      test:
-        type: STRING
-        description: ""
-      state:
-        type: STRING
-        description: ""
-      district:
-        type: STRING
-        description: ""
-      focusbrand:
-        type: STRING
-        description: ""
-      design:
-        type: STRING
-        description: ""
-      bucode:
-        type: STRING
-        description: ""
-      buname:
-        type: STRING
-        description: ""
-  enforceSchemaMethod: Warning
-  enforceSchema: true
-  enableDataReconciliation: false
-  isProfilingEnabled: false
-  tableName: secondary_sales
-  stateStoreType: iceberg
+      Customer_ID:
+        type: STRING
+        description: Unique identifier for each customer.
+        sourceColumn: Customer_ID
+        sourceTable: customers
+      First_Name:
+        type: STRING
+        description: First name of the customer.
+        sourceColumn: First_Name
+        sourceTable: customers
+        isPII: true
+      Middle_Name:
+        type: STRING
+        description: Middle name of the customer.
+        sourceColumn: Middle_Name
+        sourceTable: customers
+        isPII: true
+      Last_Name:
+        type: STRING
+        description: Last name of the customer.
+        sourceColumn: Last_Name
+        sourceTable: customers
+        isPII: true
+      Date_of_Birth:
+        type: STRING
+        description: Date of birth of the customer.
+        sourceColumn: Date_of_Birth
+        sourceTable: customers
+        isPII: true
+      Age:
+        type: STRING
+        description: Age of the customer.
+        sourceColumn: Age
+        sourceTable: customers
+      Gender:
+        type: STRING
+        description: Gender of the customer.
+        sourceColumn: Gender
+        sourceTable: customers
+      Email:
+        type: STRING
+        description: Email address of the customer.
+        sourceColumn: Email
+        sourceTable: customers
+        isPII: true
+      Phone_Number:
+        type: STRING
+        description: Phone number of the customer.
+        isPII: true
+      Loyalty_Id:
+        type: STRING
+        description: Identifier for the loyalty program associated with the customer.
+        sourceColumn: Loyalty_Id
+        sourceTable: customers
+      State:
+        type: STRING
+        description: State of residence of the customer.
+        sourceColumn: State
+        sourceTable: customers
+      Country:
+        type: STRING
+        description: Country of residence of the customer.
+        sourceColumn: Country
+        sourceTable: customers
+      Zipcode:
+        type: STRING
+        description: Zip code of the customer's address.
+        sourceColumn: Zipcode
+        sourceTable: customers
+      Household_Income:
+        type: STRING
+        description: Household income of the customer.
+        sourceColumn: Household_Income
+        sourceTable: customers
+        isPII: true
+      Consent_Flag:
+        type: STRING
+        description: Flag indicating whether the customer has given consent for
+          marketing communication.
+        sourceColumn: Consent_Flag
+        sourceTable: customers
+      Employee_Flag:
+        type: STRING
+        description: Flag indicating whether the customer is an employee.
+        sourceColumn: Employee_Flag
+        sourceTable: customers
+      Relationship_SPOC_ID:
+        type: STRING
+        description: Identifier for the single point of contact (SPOC) associated with
+          the customer's relationship.
+        sourceColumn: Relationship_SPOC_ID
+        sourceTable: customers
+      Relationship_SPOC_Store_ID:
+        type: STRING
+        description: Identifier for the store associated with the single point of
+          contact (SPOC) of the customer's relationship.
+        sourceColumn: Relationship_SPOC_Store_ID
+        sourceTable: customers
+      City:
+        type: STRING
+        description: City of residence of the customer.
+        sourceColumn: City
+        sourceTable: customers
+      Card_Id:
+        type: STRING
+        description: Identifier for the card associated with the customer.
+        sourceColumn: Card_Id
+        sourceTable: customers
+        isPII: true
+  stateStoreType: loadDataIceberg
+  isProfilingEnabled: true
+  updateStrategy: Overwrite
+  tableName: s3source.testSrcColumn
+  warehousePath: s3://bp-spark-sql-library-test-acc/
+  catalogName: iceberg
+  optional:
+    persistDataFrame: false
+    enableDataReconciliation: false
+    enforceSchema: true
+    enforceSchemaMethod: Warning
+    catalogType: glue
+    loggingOptions:
+      printSchema: true
+  refreshInterval: None
 transformation:
-  - alias: Spark_SQL_1
-    type: SQL
-    description: Read all data
-    query: select * from secondary_sales
-    sequenceNo: 2
-    references:
-      - alias: Secondary_Sales_1
-        sqlReference: secondary_sales
+  - isDynamic: true
+    alias: Spark_SQL_1
+    description: Step Transform
+    sequence: 2
+    inputDataFrameList:
+      - inputDataFrame: uat_iceberg_1
+        tempViewName: df
+    query: select * from df;
+    optional:
+      persistDataFrame: false
+    type: operationThroughSqlQuery
 controlPort:
-  dataQualityRules:
-    NullValueCheck:
-      productState:
-        checks:
-          - column: retailername
-            expression: ==
-            number: 1
-          - column: statename
-            expression: ==
-            number: 1
-        referenceAlias: Load_Secondary_Sales_Data
-outputPort:
-  subscriptionChannels:
-    - channelType: JDBC
-      queryType: SQL
+  dataQualityRules: {}
