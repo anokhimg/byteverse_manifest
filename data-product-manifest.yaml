@@ -42,12 +42,12 @@ productState:
         type: STRING
         description: Unique identifier for the content
         sourceColumn: ContentID
-        sourceTable: Rightsline
+        sourceTable: IBMS
       ContentType:
         type: STRING
         description: Type of content (e.g., movie, series, documentary)
         sourceColumn: ContentType
-        sourceTable: Rightsline
+        sourceTable: IBMS
       Cost:
         type: STRING
         description: Cost associated with the content license
@@ -57,17 +57,17 @@ productState:
         type: STRING
         description: Channel through which the content is distributed
         sourceColumn: DistributionChannel
-        sourceTable: Rightsline
+        sourceTable: IBMS
       Episodes:
         type: STRING
         description: Number of episodes in the season, if applicable
         sourceColumn: Episodes
-        sourceTable: Rightsline
+        sourceTable: IBMS
       Format:
         type: STRING
         description: Format of the content (e.g., HD, SD, 4K)
         sourceColumn: Format
-        sourceTable: Rightsline
+        sourceTable: IBMS
       Geography:
         type: STRING
         description: Geographical region where the content is licensed
@@ -92,7 +92,7 @@ productState:
         type: STRING
         description: Platform on which the content is available (e.g., Netflix, Hulu)
         sourceColumn: Platform
-        sourceTable: Rightsline
+        sourceTable: IBMS
       RightsHolder_ContentProvider:
         type: STRING
         description: Name of the rights holder or content provider
@@ -102,12 +102,12 @@ productState:
         type: STRING
         description: Season number of the content, if applicable
         sourceColumn: Season
-        sourceTable: Rightsline
+        sourceTable: IBMS
       Title:
         type: STRING
         description: Title of the content
         sourceColumn: Title
-        sourceTable: Rightsline
+        sourceTable: IBMS
   stateStoreType: writeDataFrameToDeltaTable
   isProfilingEnabled: true
   updateStrategy: Overwrite
